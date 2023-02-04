@@ -1,0 +1,66 @@
+[
+    {
+        "name": "100寸高清投影",
+        "image": "/images/facilities/projector.png"
+    },
+    {
+        "name": "70寸智能電視",
+        "image": "/images/facilities/smart-tv.png"
+    },
+    {
+        "name": "卡啦OK",
+        "image": "/images/facilities/karaoke.png"
+    },
+    {
+        "name": "電動麻雀",
+        "image": "/images/facilities/mahjong.png"
+    },
+    {
+        "name": "Poker設備",
+        "image": "/images/facilities/poker-table.png"
+    },
+    {
+        "name": "Switch",
+        "image": "/images/facilities/nintendo-switch.png"
+    },
+    {
+        "name": "Board Games",
+        "image": "/images/facilities/board-games.png"
+    },
+    {
+        "name": "300M WIFI",
+        "image": "/images/facilities/wifi.png"
+    },
+    {
+        "name": "手機充電",
+        "image": "/images/facilities/phone-charger.png"
+    },
+    {
+        "name": "雪櫃",
+        "image": "/images/facilities/fridge.png"
+    },
+    {
+        "name": "打邊爐器具",
+        "description": "（需額外收費）",
+        "image": "/images/facilities/hot-pot.png"
+    },
+    {
+        "name": "飲酒器皿",
+        "description": "（不提供酒精飲品）",
+        "image": "/images/facilities/drink.png"
+    },
+    {
+        "name": "飲品及礦泉水",
+        "description": "（場内任飲）",
+        "image": "/images/facilities/soft-drink.png"
+    },
+    {
+        "name": "RITZ及OREO餅乾",
+        "description": "（場内任食）",
+        "image": "/images/facilities/biscuit.png"
+    },
+    {
+        "name": "24小時協助",
+        "image": "/images/facilities/call-center.png"
+    }
+]

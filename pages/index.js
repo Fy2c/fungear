@@ -1,209 +1,425 @@
-import Head from 'next/head'
+import NavMenu from '../components/navMenu'
+import ExportedImage from "next-image-export-optimizer";
+import Rooms from '../api/rooms.json';
+import Facilities from '../api/facilities.json';
+import Script from 'next/script';
 
 export default function Home() {
   return (
-    <div className="container">
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main>
-        <h1 className="title">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className="description">
-          Get started by editing <code>pages/index.js</code>
-        </p>
-
-        <div className="grid">
-          <a href="https://nextjs.org/docs" className="card">
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className="card">
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="card"
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="card"
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+    <>
+      <NavMenu></NavMenu>
+      <section id="about-us" class="hero h-screen bg-black text-white">
+        <div class="overlay">
+          <div class="container px-3 mx-auto flex flex-wrap flex-row items-center h-screen">
+            <div class="flex flex-col w-full justify-center text-center items-center ">
+              <div class="mx-0 md:text-left items-start text-center">
+                <p class="uppercase tracking-loose w-full">24小時自助形式使用</p>
+                <h1 class="my-4 text-5xl font-bold leading-tight md:ml-0 mx-auto">舒適環境，優質服務</h1>
+                <p class="leading-normal text-2xl mb-8 md:ml-0 mx-auto">讓你盡情享受派對和聚會！</p>
+                <button 
+                  class="mx-auto lg:mx-0 hover:underline bg-white text-gray-800 font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out"
+                  onClick={(e) => toWhatsApp()}
+                >立即預約</button>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
+      </section>
 
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel" className="logo" />
-        </a>
-      </footer>
+      <section class="w-full bg-white mt-24">
+        <div class="container max-w-6xl m-8 px-3 mx-auto flex flex-wrap flex-row items-center h-screen">
+          <div class="flex flex-wrap w-full">
+            <div class="md:w-1/2 w-full p-6">
+              <div class="relative w-full h-96">
+                <ExportedImage
+                  src="/images/light.jpg"
+                  alt="Static Image"
+                  layout="fill"
+                  objectFit="cover"
+                />;
+              </div>
+            </div>
+            <div class="w-full sm:w-1/2 p-6 flex flex-wrap flex-row items-center">
+              <div>
+                <h2 class="text-4xl text-gray-800 font-bold leading-none mb-3">關於我們</h2>
+                <div class="w-full mb-4">
+                  <div class="h-1 mx-auto gradient w-full opacity-50 my-0 py-0 rounded-t"></div>
+                </div>
+                <p class="text-xl text-gray-600 mb-8">
+                  FunGear 擁有12間特式主題Party Room，24小時自助形式使用，為商廈獨立房間，安全、衛生、私隱度高，我們定時安排專人清潔房間，24小時為客人提供協助，提供優質派對娛樂服務。
+                  <br />
+                  <br />
+                  房間: <span class="text-pink-500">FunGear Chicago</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <style jsx>{`
-        .container {
-          min-height: 100vh;
-          padding: 0 0.5rem;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
+      <section id="room" class="w-full bg-slate-100 pt-24">
+        <div class="container max-w-6xl mb-8 px-3 mx-auto flex flex-wrap flex-row items-center">
+          <div class="w-full mx-0 my-10 text-center">
+            <h2 class="text-4xl text-gray-800 font-bold leading-none mb-0">場地簡介</h2>
+          </div>
 
-        main {
-          padding: 5rem 0;
-          flex: 1;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer {
-          width: 100%;
-          height: 100px;
-          border-top: 1px solid #eaeaea;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        footer img {
-          margin-left: 0.5rem;
-        }
-
-        footer a {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-
-        a {
-          color: inherit;
-          text-decoration: none;
-        }
-
-        .title a {
-          color: #0070f3;
-          text-decoration: none;
-        }
-
-        .title a:hover,
-        .title a:focus,
-        .title a:active {
-          text-decoration: underline;
-        }
-
-        .title {
-          margin: 0;
-          line-height: 1.15;
-          font-size: 4rem;
-        }
-
-        .title,
-        .description {
-          text-align: center;
-        }
-
-        .description {
-          line-height: 1.5;
-          font-size: 1.5rem;
-        }
-
-        code {
-          background: #fafafa;
-          border-radius: 5px;
-          padding: 0.75rem;
-          font-size: 1.1rem;
-          font-family: Menlo, Monaco, Lucida Console, Liberation Mono,
-            DejaVu Sans Mono, Bitstream Vera Sans Mono, Courier New, monospace;
-        }
-
-        .grid {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          flex-wrap: wrap;
-
-          max-width: 800px;
-          margin-top: 3rem;
-        }
-
-        .card {
-          margin: 1rem;
-          flex-basis: 45%;
-          padding: 1.5rem;
-          text-align: left;
-          color: inherit;
-          text-decoration: none;
-          border: 1px solid #eaeaea;
-          border-radius: 10px;
-          transition: color 0.15s ease, border-color 0.15s ease;
-        }
-
-        .card:hover,
-        .card:focus,
-        .card:active {
-          color: #0070f3;
-          border-color: #0070f3;
-        }
-
-        .card h3 {
-          margin: 0 0 1rem 0;
-          font-size: 1.5rem;
-        }
-
-        .card p {
-          margin: 0;
-          font-size: 1.25rem;
-          line-height: 1.5;
-        }
-
-        .logo {
-          height: 1em;
-        }
-
-        @media (max-width: 600px) {
-          .grid {
-            width: 100%;
-            flex-direction: column;
+          {
+            Rooms &&
+            Rooms.map((room, i) => (
+              <div class="md:w-1/2 w-full p-10">
+                <div class="relative w-full h-96">
+                  <ExportedImage
+                    src={room.image}
+                    alt="Static Image"
+                    layout="fill"
+                    objectFit="cover"
+                  />;
+                </div>
+                <h5 class="font-semibold text-2xl my-2">{room.name}</h5>
+                <p>{room.desc}，適合{room.capacity.min}-{room.capacity.max}人</p>
+              </div>
+            ))
           }
-        }
-      `}</style>
 
-      <style jsx global>{`
-        html,
-        body {
-          padding: 0;
-          margin: 0;
-          font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-            Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
-            sans-serif;
-        }
+        </div>
+      </section>
 
-        * {
-          box-sizing: border-box;
+      <section id="facility" class="w-full bg-white py-24">
+        <div class="container max-w-6xl mb-8 px-3 mx-auto flex flex-wrap flex-row items-center">
+          <div class="w-full mx-0 my-10 text-center">
+            <h2 class="text-4xl text-gray-800 font-bold leading-none mb-0">場地設施</h2>
+          </div>
+
+          {
+            Facilities &&
+            Facilities.map((item, i) => (
+              <div class="mx-10 my-5 w-34">
+                <div class="relative mx-auto w-24 h-24">
+                  <ExportedImage
+                    src={item.image}
+                    alt="Static Image"
+                    layout="fill"
+                    objectFit="cover"
+                  />;
+                </div>
+                <h5 class="text-center text-xl mt-4">{item.name}</h5>
+                <p class="text-center"></p>
+              </div>
+            ))
+          }
+        </div>
+      </section>
+
+      <section id="price-list" class="w-full bg-slate-100 pt-24 pb-4">
+        <div class="container mx-auto flex flex-wrap justify-center">
+          <div class="w-full mx-0 my-10 text-center">
+            <h2 class="text-4xl text-gray-800 font-bold leading-none mb-3">3人或以上收費表</h2>
+          </div>
+          <div class="flex flex-col md:w-2/6 w-full mx-auto md:mx-2 rounded-none lg:rounded-l-lg bg-white mt-2">
+            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow p-6 pb-10">
+              <div class="p-4 text-2xl font-bold text-center">星期一至四平日</div>
+              <div class="w-full mb-4">
+                <div class="h-1 mx-auto gradient w-full opacity-50 my-0 py-0 rounded-t"></div>
+              </div>
+              <table class="table-auto text-left w-full">
+                <thead>
+                  <tr>
+                    <th class="pt-4">時段</th>
+                    <th class="pt-4">每位收費</th>
+                    <th class="pt-4"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pt-4">10:00-19:00</td>
+                    <td class="pt-4">$90 / 3小時</td>
+                    <td class="pt-4">其後 $20 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">19:00-00:00</td>
+                    <td class="pt-4">$120 / 3小時</td>
+                    <td class="pt-4">其後 $20 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">00:00-10:00</td>
+                    <td class="pt-4">$150 / 8小時</td>
+                    <td class="pt-4">其後 $20 / 小時</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="flex flex-col md:w-2/6 w-full mx-auto md:mx-2 rounded-none lg:rounded-l-lg bg-white mt-2">
+            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow p-6 pb-10">
+              <div class="p-4 text-2xl font-bold text-center">星期五及假期前夕</div>
+              <div class="w-full mb-4">
+                <div class="h-1 mx-auto red-gradient w-full opacity-50 my-0 py-0 rounded-t"></div>
+              </div>
+              <table class="table-auto text-left w-full">
+                <thead>
+                  <tr>
+                    <th class="pt-4">時段</th>
+                    <th class="pt-4">每位收費</th>
+                    <th class="pt-4"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pt-4">10:00-19:00</td>
+                    <td class="pt-4">$90 / 3小時</td>
+                    <td class="pt-4">其後 $20 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">19:00-00:00</td>
+                    <td class="pt-4">$180 / 3小時</td>
+                    <td class="pt-4">其後 $20 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">00:00-10:00</td>
+                    <td class="pt-4">$220 / 8小時</td>
+                    <td class="pt-4">其後 $20 / 小時</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="flex flex-col md:w-2/6 w-full mx-auto md:mx-2 rounded-none lg:rounded-l-lg bg-white mt-2">
+            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow p-6 pb-10">
+              <div class="p-4 text-2xl font-bold text-center">星期六及假期</div>
+              <div class="w-full mb-4">
+                <div class="h-1 mx-auto red-gradient w-full opacity-50 my-0 py-0 rounded-t"></div>
+              </div>
+              <table class="table-auto text-left w-full">
+                <thead>
+                  <tr>
+                    <th class="pt-4">時段</th>
+                    <th class="pt-4">每位收費</th>
+                    <th class="pt-4"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pt-4">10:00-19:00</td>
+                    <td class="pt-4">$150 / 3小時</td>
+                    <td class="pt-4">其後 $20 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">19:00-00:00</td>
+                    <td class="pt-4">$180 / 3小時</td>
+                    <td class="pt-4">其後 $20 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">00:00-10:00</td>
+                    <td class="pt-4">$220 / 8小時</td>
+                    <td class="pt-4">其後 $20 / 小時</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="flex flex-col md:w-2/6 w-full mx-auto md:mx-2 rounded-none lg:rounded-l-lg bg-white mt-2">
+            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow p-6 pb-10">
+              <div class="p-4 text-2xl font-bold text-center">星期日</div>
+              <div class="w-full mb-4">
+                <div class="h-1 mx-auto red-gradient w-full opacity-50 my-0 py-0 rounded-t"></div>
+              </div>
+              <table class="table-auto text-left w-full">
+                <thead>
+                  <tr>
+                    <th class="pt-4">時段</th>
+                    <th class="pt-4">每位收費</th>
+                    <th class="pt-4"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pt-4">10:00-19:00</td>
+                    <td class="pt-4">$150 / 3小時</td>
+                    <td class="pt-4">其後 $20 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">19:00-00:00</td>
+                    <td class="pt-4">$150 / 3小時</td>
+                    <td class="pt-4">其後 $20 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">00:00-10:00</td>
+                    <td class="pt-4">$180 / 8小時</td>
+                    <td class="pt-4">其後 $20 / 小時</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="flex flex-col md:w-4/6 w-full px-5 md:px-0 xd:w-full md:mx-auto rounded-none lg:rounded-l-lg my-5">
+            <p>* 確認預約後加鐘收費為每位$30 / 小時</p>
+            <p>* 若預約時段橫跨兩個或以上時段，收費以收費較高時段計算</p>
+            <p>* 訂單總收費受限於每房低消，詳情請向職員查詢</p>
+            <p>* 以上只供參考，不適用於八號風球日子、中秋、聖誕、元旦及新年假期，收費以FunGear報價為準</p>
+            <p>* 詳情請參閱：<a class="underline decoration-sky-500" href="/price-term-and-condition">收費條款及細則</a><span class="px-1">和</span><a class="underline decoration-sky-500" href="/rental-term-and-condition">預約條款及細則</a></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="price-list-two" class="w-full bg-slate-100 pt-24 pb-4">
+        <div class="container mx-auto flex flex-wrap justify-center">
+          <div class="w-full mx-0 my-10 text-center">
+            <h2 class="text-4xl text-gray-800 font-bold leading-none mb-3">2人收費表</h2>
+          </div>
+          <div class="flex flex-col md:w-2/6 w-full mx-auto md:mx-2 rounded-none lg:rounded-l-lg bg-white mt-2">
+            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow p-6 pb-10">
+              <div class="p-4 text-2xl font-bold text-center">星期一至四平日</div>
+              <div class="w-full mb-4">
+                <div class="h-1 mx-auto gradient w-full opacity-50 my-0 py-0 rounded-t"></div>
+              </div>
+              <table class="table-auto text-left w-full">
+                <thead>
+                  <tr>
+                    <th class="pt-4">時段</th>
+                    <th class="pt-4">每位收費</th>
+                    <th class="pt-4"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pt-4">10:00-19:00</td>
+                    <td class="pt-4">$150 / 3小時</td>
+                    <td class="pt-4">其後 $10 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">19:00-00:00</td>
+                    <td class="pt-4">$275 / 6小時</td>
+                    <td class="pt-4">其後 $30 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">00:00-10:00</td>
+                    <td class="pt-4">$225 / 8小時</td>
+                    <td class="pt-4">其後 $30 / 小時</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="flex flex-col md:w-2/6 w-full mx-auto md:mx-2 rounded-none lg:rounded-l-lg bg-white mt-2">
+            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow p-6 pb-10">
+              <div class="p-4 text-2xl font-bold text-center">星期五及假期前夕</div>
+              <div class="w-full mb-4">
+                <div class="h-1 mx-auto red-gradient w-full opacity-50 my-0 py-0 rounded-t"></div>
+              </div>
+              <table class="table-auto text-left w-full">
+                <thead>
+                  <tr>
+                    <th class="pt-4">時段</th>
+                    <th class="pt-4">每位收費</th>
+                    <th class="pt-4"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pt-4">10:00-19:00</td>
+                    <td class="pt-4">$150 / 3小時</td>
+                    <td class="pt-4">其後 $10 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">19:00-00:00</td>
+                    <td class="pt-4">$400 / 7小時</td>
+                    <td class="pt-4">其後 $30 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">00:00-10:00</td>
+                    <td class="pt-4">$300 / 8小時</td>
+                    <td class="pt-4">其後 $30 / 小時</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="flex flex-col md:w-2/6 w-full mx-auto md:mx-2 rounded-none lg:rounded-l-lg bg-white mt-2">
+            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow p-6 pb-10">
+              <div class="p-4 text-2xl font-bold text-center">星期六及假期</div>
+              <div class="w-full mb-4">
+                <div class="h-1 mx-auto red-gradient w-full opacity-50 my-0 py-0 rounded-t"></div>
+              </div>
+              <table class="table-auto text-left w-full">
+                <thead>
+                  <tr>
+                    <th class="pt-4">時段</th>
+                    <th class="pt-4">每位收費</th>
+                    <th class="pt-4"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pt-4">10:00-19:00</td>
+                    <td class="pt-4">$225 / 6.5小時</td>
+                    <td class="pt-4">其後 $30 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">19:00-00:00</td>
+                    <td class="pt-4">$400 / 7小時</td>
+                    <td class="pt-4">其後 $30 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">00:00-10:00</td>
+                    <td class="pt-4">$300 / 8小時</td>
+                    <td class="pt-4">其後 $30 / 小時</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="flex flex-col md:w-2/6 w-full mx-auto md:mx-2 rounded-none lg:rounded-l-lg bg-white mt-2">
+            <div class="flex-1 bg-white text-gray-600 rounded-t rounded-b-none overflow-hidden shadow p-6 pb-10">
+              <div class="p-4 text-2xl font-bold text-center">星期日</div>
+              <div class="w-full mb-4">
+                <div class="h-1 mx-auto red-gradient w-full opacity-50 my-0 py-0 rounded-t"></div>
+              </div>
+              <table class="table-auto text-left w-full">
+                <thead>
+                  <tr>
+                    <th class="pt-4">時段</th>
+                    <th class="pt-4">每位收費</th>
+                    <th class="pt-4"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="pt-4">10:00-19:00</td>
+                    <td class="pt-4">$225 / 6.5小時</td>
+                    <td class="pt-4">其後 $30 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">19:00-00:00</td>
+                    <td class="pt-4">$275 / 4.5小時</td>
+                    <td class="pt-4">其後 $30 / 小時</td>
+                  </tr>
+                  <tr>
+                    <td class="pt-4">00:00-10:00</td>
+                    <td class="pt-4">$270 / 8小時</td>
+                    <td class="pt-4">其後 $30 / 小時</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="flex flex-col md:w-4/6 w-full px-5 md:px-0 xd:w-full md:mx-auto rounded-none lg:rounded-l-lg my-5">
+            <p>* 確認預約後加鐘收費為每位$50 / 小時</p>
+            <p>* 若預約時段橫跨兩個或以上時段，收費以收費較高時段計算</p>
+            <p>* 訂單總收費受限於每房低消，詳情請向職員查詢</p>
+            <p>* 以上只供參考，不適用於八號風球日子、中秋、聖誕、元旦及新年假期，收費以FunGear報價為準</p>
+            <p>* 詳情請參閱：<a class="underline decoration-sky-500" href="/price-term-and-condition">收費條款及細則</a><span class="px-1">和</span><a class="underline decoration-sky-500" href="/rental-term-and-condition">預約條款及細則</a></p>
+          </div>
+        </div>
+      </section>
+
+      <Script>{
+        `
+        function toWhatsApp() {
+          let url = "https://wa.me/56220401";
+          window.open(url, '_blank');
         }
-      `}</style>
-    </div>
+        `
+      }</Script>
+    </>
   )
 }

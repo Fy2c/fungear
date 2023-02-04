@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gradient {
+  background: linear-gradient(90deg, #76d533 0%, #51daaa 100%);
+}
+
+.red-gradient {
+  background: linear-gradient(90deg, #d53369 0%, #d8990f 100%);
+}
+
+.hero {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(/images/rooms/nextImageExportOptimizer/chicago-opt-3840.WEBP);
+}
+
+.hero .overlay 
+{
+    background-color: rgba(0, 0, 0, 0.6);
+}

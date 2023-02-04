@@ -1,0 +1,80 @@
+[
+    {
+        "name": "FunGear Chicago",
+        "desc": "輕奢侈風，帶給你會所級享受",
+        "capacity": { "min": 6, "max": 20 },
+        "image": "/images/rooms/chicago.jpg"
+    },
+    {
+        "name": "FunGear Hollywood",
+        "desc": "罕有電影主題房，受歡迎電影主角陪住你",
+        "capacity": { "min": 6, "max": 20 },
+        "image": "/images/rooms/hollywood.jpg"
+    },
+    {
+        "name": "FunGear Dubai",
+        "desc": "原木色主調，復古風格",
+        "capacity": { "min": 6, "max": 20 },
+        "image": "/images/rooms/dubai.jpg"
+    },
+    {
+        "name": "FunGear London",
+        "desc": "英倫格調，巨型霓虹燈",
+        "capacity": { "min": 2, "max": 8 },
+        "image": "/images/rooms/london.jpg"
+    },
+    {
+        "name": "FunGear New York",
+        "desc": "時尚現代設計，環境舒適潔净",
+        "capacity": { "min": 2, "max": 8 },
+        "image": "/images/rooms/new_york.jpg"
+    },
+    {
+        "name": "FunGear Tokyo",
+        "desc": "灰色為主調，現代簡約設計",
+        "capacity": { "min": 2, "max": 8 },
+        "image": "/images/rooms/tokyo.jpg"
+    },
+    {
+        "name": "FunGear Berlin",
+        "desc": "型格酒吧風設計",
+        "capacity": { "min": 2, "max": 10 },
+        "image": "/images/rooms/berlin.jpg"
+    },
+    {
+        "name": "FunGear Paris",
+        "desc": "粉紅和紫色主調，浪漫氛圍",
+        "capacity": { "min": 2, "max": 8 },
+        "image": "/images/rooms/paris.jpg"
+    },
+    {
+        "name": "FunGear Athens",
+        "desc": "航洋航主題，多款海洋裝飾",
+        "capacity": { "min": 2, "max": 10 },
+        "image": "/images/rooms/athens.jpg"
+    },
+    {
+        "name": "FunGear Milan",
+        "desc": "灰黑色主調，巨型HAPPY HOUR霓虹燈",
+        "capacity": { "min": 2, "max": 8 },
+        "image": "/images/rooms/milan.jpg"
+    },
+    {
+        "name": "FunGear Barcelona",
+        "desc": "足球迷聖地，巨型歐冠獎盃比你打卡",
+        "capacity": { "min": 2, "max": 20 },
+        "image": "/images/rooms/barcelona.jpg"
+    },
+    {
+        "name": "FunGear Las Vegas",
+        "desc": "拉斯維加斯賭場主題，夢幻氣氛，大型燈箱比你打卡",
+        "capacity": { "min": 2, "max": 25 },
+        "image": "/images/rooms/las_vegas.jpg"
+    },
+    {
+        "name": "FunGear Miami",
+        "desc": "搖滾音樂主題，型格設計，多個結他模型比你打卡！",
+        "capacity": { "min": 2, "max": 10 },
+        "image": "/images/rooms/miami.jpg"
+    }
+]
